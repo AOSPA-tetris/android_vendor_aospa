@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     SPDX-FileCopyrightText: Paranoid Android
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest>
+
+  <remote  name="schoosh-gitlab"
+           fetch="https://gitlab.com/SuperAviation001" />
+
+  <project path="device/nothing/tetris" name="android_device_nothing_tetris" remote="aospa-tetris" revision="vauxite" />
+  <project path="device/nothing/tetris-kernel" name="android_device_nothing_tetris-kernel" remote="aospa-tetris" revision="vauxite" />
+  <project path="hardware/mediatek" name="android_hardware_mediatek" remote="aospa-tetris" revision="vauxite" />
+  <project path="vendor/nothing/tetris" name="android_vendor_nothing_tetris" remote="schoosh-gitlab" revision="a15" />
+</manifest>
