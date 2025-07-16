@@ -161,6 +161,7 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
     libprotobuf-cpp-lite-3.9.1-vendorcompat
 
+ifeq ($(call is-board-platform-in-list,$(QCOM_BOARD_PLATFORMS)),true)
 # QTI VNDK Framework Detect
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti \
@@ -174,6 +175,7 @@ PRODUCT_PACKAGES += \
 
 # Qualcomm Common
 $(call inherit-product, device/qcom/common/common.mk)
+endif
 
 # Rescue Party
 # Disable RescueParty due to high risk of data loss
@@ -200,6 +202,7 @@ endif
 # SEPolicy
 $(call inherit-product, vendor/aospa/sepolicy/sepolicy.mk)
 
+ifeq ($(call is-board-platform-in-list,$(QCOM_BOARD_PLATFORMS)),true)
 # Snapdragon Clang
 $(call inherit-product, vendor/qcom/sdclang/config/SnapdragonClang.mk)
 
@@ -225,14 +228,15 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     qti_telephony_utils_prd.xml
 
-# Telephony - AOSP
-PRODUCT_PACKAGES += \
-    Stk
-
 PRODUCT_BOOT_JARS += \
     tcmiface \
     telephony-ext
 endif
+endif
+
+# Telephony - AOSP
+PRODUCT_PACKAGES += \
+    Stk
 
 # TextClassifier
 PRODUCT_PACKAGES += \
