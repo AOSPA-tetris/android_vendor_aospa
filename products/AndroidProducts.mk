@@ -70,4 +70,5 @@ COMMON_LUNCH_CHOICES += \
     aospa_sky-userdebug \
     aospa_spes-userdebug \
     aospa_sunny-userdebug \
-    aospa_surya-userdebug
+    aospa_surya-userdebug \
+    aospa_tetris-userdebug
